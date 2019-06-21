@@ -16,7 +16,8 @@
                     $.ajax({
                         type: "GET",
                         url: "https://d.la1-c1-hnd.salesforceliveagent.com/chat/rest/System/SessionId",
-                        headers: headers,
+                        beforeSend: function(xhr){xhr.setRequestHeader('X-LIVEAGENT-API-VERSION', '45');
+                    								xhr.setRequestHeader('X-LIVEAGENT-AFFINITY', null);},
                         dataType: "application/json",
                         success: function (response) {
                            console.log('Success:' + JSON.parse(response));
