@@ -21,7 +21,9 @@
                         success: function (response) {
                            console.log('Success:' + JSON.parse(response));
                         }, error: function (response) {
-                           console.log('Error: ' + JSON.parse(response));
+                           console.log('Error: ' + response.status + response.statusText + response.errorThrown);
+                        }, complete:function(response){
+                        	console.log('Error: ' + response.textStatus);
                         }
                     });
 
