@@ -7,15 +7,18 @@
   crossorigin="anonymous"></script>
 		
       <script type = "text/javascript">
+      				let headers = new Headers();
+				  headers.append('X-LIVEAGENT-API-VERSION', '45');
+				  headers.append('X-LIVEAGENT-AFFINITY', null);
                     $.ajax({
                         type: "GET",
                         url: "https://d.la1-c1-hnd.salesforceliveagent.com/chat/rest/System/SessionId",
-                        headers: {"X-LIVEAGENT-API-VERSION": "45", "X-LIVEAGENT-AFFINITY": null},
+                        headers: headers,
                         dataType: "application/json",
                         success: function (response) {
-                           console.log('123' + response);
+                           console.log('Success:' + response);
                         }, error: function (response) {
-                           console.log('123' + response);
+                           console.log('Error: ' + response);
                         }
                     });
 
