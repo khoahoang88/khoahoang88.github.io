@@ -17,14 +17,17 @@
                         type: "GET",
                         url: "https://d.la1-c1-hnd.salesforceliveagent.com/chat/rest/System/SessionId",
                         beforeSend: function(xhr){xhr.setRequestHeader('X-LIVEAGENT-API-VERSION', '45');
-                    								xhr.setRequestHeader('X-LIVEAGENT-AFFINITY', null);},
+                    								xhr.setRequestHeader('X-LIVEAGENT-AFFINITY', 'null');
+                    								xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://d.la1-c1-hnd.salesforceliveagent.com/chat/rest/System/SessionId');
+                    								xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
+                    							},
                         dataType: "application/json",
                         success: function (response) {
                            console.log('Success:' + JSON.parse(response));
                         }, error: function (response) {
                            console.log('Error: ' + response.status + response.statusText + response.errorThrown);
                         }, complete:function(response){
-                        	console.log('Error: ' + response.textStatus);
+                        	console.log('Progress: ' + response.textStatus);
                         }
                     });
 
