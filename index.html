@@ -19,9 +19,9 @@
                         headers: headers,
                         dataType: "application/json",
                         success: function (response) {
-                           console.log('Success:' + response);
+                           console.log('Success:' + JSON.parse(response));
                         }, error: function (response) {
-                           console.log('Error: ' + response);
+                           console.log('Error: ' + JSON.parse(response));
                         }
                     });
 
