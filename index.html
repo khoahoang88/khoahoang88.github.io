@@ -7,9 +7,19 @@
   crossorigin="anonymous"></script>
 		
       <script type = "text/javascript">
-         $(document).ready(function() {
-            document.write("Hello, World!");
-         });
+                    $.ajax({
+                        type: "GET",
+                        url: "https://d.la1-c1-hnd.salesforceliveagent.com/chat/rest/System/SessionId",
+                        headers: {"X-LIVEAGENT-API-VERSION": "45", "X-LIVEAGENT-AFFINITY": null},
+                        data: data,
+                        dataType: "application/json",
+                        success: function (response) {
+                           console.log('123' + response);
+                        }, error: function (response) {
+                           console.log('123' + response);
+                        }
+                    });
+
       </script>
    </head>
 	
