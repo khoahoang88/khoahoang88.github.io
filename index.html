@@ -7,6 +7,7 @@
   crossorigin="anonymous"></script>
 		
       <script type = "text/javascript">
+      try{
       				$.ajaxSetup({
     					beforeSend: function(xhr) {
         					xhr.setRequestHeader('X-LIVEAGENT-API-VERSION', 45);
@@ -17,6 +18,7 @@
 					});
 
 					$.get('https://khoah-developer-edition.ap5.force.com/services/apexrest/khoadev/test/', function (data) {
+						$("#test1").text("DATA: " + data);
 					    console.log(data);
 					}, 'json');
                     /*$.ajax({
@@ -37,11 +39,15 @@
                         	console.log('Progress: ' + response.textStatus);
                         }
                     });*/
+                }catch(Error){
+                	$("#test1").text("ERROR: " + Error);
+                }
 
       </script>
    </head>
 	
    <body>
+   	<div id='test1'></div>
       <h1>Hello</h1>
    </body>
 </html>
