@@ -8,6 +8,21 @@
 		
       <script type = "text/javascript">
       try{
+      				var settings = {
+						  "async": true,
+						  "crossDomain": true,
+						  "url": "https://d.la1-c1-hnd.salesforceliveagent.com/chat/rest/System/SessionId/",
+						  "method": "GET",
+						  "headers": {
+						    "X-LIVEAGENT-API-VERSION": "45",
+						    "X-LIVEAGENT-AFFINITY": "null",
+						    "cache-control": "no-cache"
+						  }
+					}
+
+					$.ajax(settings).done(function (response) {
+					  console.log(response);
+					});
       				/*$.ajaxSetup({
     					beforeSend: function(xhr) {
         					xhr.setRequestHeader('X-LIVEAGENT-API-VERSION', 45);
@@ -15,12 +30,12 @@
         					xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://d.la1-c1-hnd.salesforceliveagent.com/chat/rest/System/SessionId');
 							xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
     					}
-					});*/
+					});
 
 					$.get('https://d.la1-c1-hnd.salesforceliveagent.com/chat/rest/System/SessionId/', function (data, success) {
 						$("#test1").text("DATA: " + data + '-' + success.status + success.data);
 					    console.log(data);
-					}, 'json');
+					}, 'json');*/
                     /*$.ajax({
                         type: "GET",
                         url: "https://d.la1-c1-hnd.salesforceliveagent.com/chat/rest/System/SessionId",
