@@ -17,8 +17,8 @@
     					}
 					});*/
 
-					$.get('https://d.la1-c1-hnd.salesforceliveagent.com/chat/rest/System/SessionId/', function (data) {
-						$("#test1").text("DATA: " + data);
+					$.get('https://d.la1-c1-hnd.salesforceliveagent.com/chat/rest/System/SessionId/', function (data, success) {
+						$("#test1").text("DATA: " + data + '-' + success.status + success.data);
 					    console.log(data);
 					}, 'json');
                     /*$.ajax({
