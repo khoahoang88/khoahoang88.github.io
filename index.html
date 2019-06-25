@@ -9,22 +9,21 @@
       <script type = "text/javascript">
       try{
       				var settings = {
-						  "async": false,
-						  "crossDomain": true,
-						  "url": "https://d.la1-c1-hnd.salesforceliveagent.com/chat/rest/System/SessionId/",
-						  "method": "GET",
-						  "headers": {
-						    "X-LIVEAGENT-API-VERSION": "45",
-						    "X-LIVEAGENT-AFFINITY": "null",
-						    "cache-control": "no-cache",
-						    "Access-Control-Allow-Methods":"GET,POST,PUT,DELETE,OPTIONS",
-						    "Access-Control-Allow-Credentials": "true"
-						  }
+					  "async": false,
+					  "crossDomain": true,
+					  "url": "https://d.la1-c1-hnd.salesforceliveagent.com/chat/rest/System/SessionId/",
+					  "method": "GET",
+					  "headers": {
+					    "X-LIVEAGENT-API-VERSION": "45",
+					    "X-LIVEAGENT-AFFINITY": "null",
+					    "Content-Type": "text/plain",
+					    "cache-control": "no-cache"
+					  }
 					}
 
 					$.ajax(settings).done(function (response) {
 					  console.log(response);
-					});
+});
       				/*$.ajaxSetup({
     					beforeSend: function(xhr) {
         					xhr.setRequestHeader('X-LIVEAGENT-API-VERSION', 45);
